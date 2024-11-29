@@ -1,5 +1,6 @@
 import { createBrowserRouter, Navigate } from 'react-router'
 import { AppConstantRoutes } from '@/services/routes/path.ts'
+import Login from '@/pages/auth/Login.tsx'
 
 // Define a default route handler
 // if the user is already logged in, redirect to the dashboard
@@ -13,5 +14,9 @@ export const router = createBrowserRouter([
   {
     path: '*',
     element: handleDefaultRoute(),
+  },
+  {
+    path: AppConstantRoutes.paths.auth.login,
+    element: <Login />,
   },
 ])
