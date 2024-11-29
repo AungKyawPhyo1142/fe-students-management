@@ -8,10 +8,8 @@ type CountStore = {
 
 export const useCountStore = create<CountStore>((set) => ({
   count: 0,
-  increment:
-    () => set((state) => ({ count: state.count + 1 })),
-  decrement:
-    () => set((state) => ({ count: state.count - 1 })),
+  increment: () => set((state) => ({ count: state.count + 1 })),
+  decrement: () => set((state) => ({ count: state.count - 1 })),
 }))
 
 export const selectCount = (state: CountStore) => state.count

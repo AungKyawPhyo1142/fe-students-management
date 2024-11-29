@@ -11,5 +11,15 @@ export const AppConstantRoutes = {
         },
       }
     },
+    get admin() {
+      return {
+        get default() {
+          return '/admin'
+        },
+        get home() {
+          return `${this.default}/home`
+        },
+      }
+    },
   },
 }

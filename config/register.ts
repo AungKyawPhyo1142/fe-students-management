@@ -8,11 +8,13 @@ const config = {
   root: 'student-management-system-root',
   version: '0.1.0',
   baseURL: 'http://localhost:8080',
-  key: process.env.SECRET_KEY ?? 'development-secret-key',
-  ...(process.env.VERCEL_ENV !== 'production' ? developmentCfg : productionCfg),
+  key: import.meta.env.VITE_SECRET_KEY ?? 'development-secret-key',
+  ...(import.meta.env.VERCEL_ENV !== 'production'
+    ? developmentCfg
+    : productionCfg),
 }
 
-if (process.env.VERCEL_ENV !== 'production') {
+if (import.meta.env.VERCEL_ENV !== 'production') {
   console.log('Development Config', config)
 }
 
