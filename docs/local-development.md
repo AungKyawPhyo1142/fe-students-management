@@ -12,3 +12,7 @@
   "endpoint": "http://localhost:3000"
 
 **MAKE SURE TO CHANGE IT BACK TO DEV-SERVER WHEN YOU PUSH IT TO REMOTE**
+
+- Admin Account (Dev Server):
+  username: aung123
+  password: aung@123
