@@ -11,11 +11,15 @@ This is the student management system project written in React + Typescript as c
 ## Installation
 
 ### 1. Clone the project from the repo
+
 ### 2. Install all the dependencies
+
     npm install
+
 ### 3. Run with the following command
 
     npm run dev
 
 ## Contributers
+
 - [Sebastian Kein (AungKyaw Phyo)](https://github.com/AungKyawPhyo1142)
