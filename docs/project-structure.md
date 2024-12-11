@@ -11,7 +11,7 @@ project-root/
         /images
         /videos
         /fonts...
-    
+
     Keep all of your code files here separated from configuration files
     /src
 
@@ -31,7 +31,7 @@ project-root/
             DO NOT ADD/MODIFY THE FOLDER OR FILES INSIDE
             THIS IS USED FOR THE SHADCN-UI
             /ui
-        
+
         Features related code, currently handling for the proected routes
         /features
 
