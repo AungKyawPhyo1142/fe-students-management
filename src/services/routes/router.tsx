@@ -1,6 +1,7 @@
 import { createBrowserRouter, Navigate } from 'react-router'
 import { AppConstantRoutes } from '@/services/routes/path.ts'
 import Login from '@/pages/auth/Login.tsx'
+import Register from '@/pages/auth/Register'
 import SecureRoute from '@/features/SecureRoute.tsx'
 import LayoutWithAuth from '@/components/layout/LayoutWithAuth.tsx'
 import Home from '@/pages/admin/Home.tsx'
@@ -28,6 +29,10 @@ export const router = createBrowserRouter([
   {
     path: AppConstantRoutes.paths.auth.login,
     element: <Login />,
+  },
+  {
+    path: AppConstantRoutes.paths.auth.register,
+    element: <Register />,
   },
   // ** the following routes are protected with authentication
   {
