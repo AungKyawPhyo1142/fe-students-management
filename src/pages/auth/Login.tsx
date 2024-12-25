@@ -21,6 +21,8 @@ import { adminRequest } from '@/services/network/lib/auth.ts'
 import { useFormik } from 'formik'
 import { useCustomEvents } from '@/services/formik/hooks.ts'
 import { initAfterLogin } from '@/services/zustand/authStore.ts'
+import { Toaster } from '@/components/ui/toaster'
+import { useToast } from '@/hooks/use-toast'
 
 export interface LoginFormValues {
   username: string
@@ -30,6 +32,7 @@ export interface LoginFormValues {
 const Login = () => {
   const navigate = useNavigate()
   const authLocal = LocalServices.getLocalStorage()
+  const { toast } = useToast()
 
   const initialValues: LoginFormValues = {
     username: '',
@@ -43,7 +46,20 @@ const Login = () => {
 
   const onSubmit = async (values: LoginFormValues) => {
     const response = await adminRequest.login(values).catch((e) => {
-      console.log(e)
+      if (e.status === 401) {
+        toast({
+          title: 'Username or password is incorrect',
+          description: 'Please check your username and password and try again.',
+          variant: 'destructive',
+        })
+      } else {
+        toast({
+          title: 'Failed to login',
+          description:
+            'An error occurred while trying to login. Please try again later.',
+          variant: 'destructive',
+        })
+      }
     })
 
     if (response) {
@@ -78,8 +94,9 @@ const Login = () => {
 
   return (
     <LayoutWithoutAuth>
+      <Toaster />
       <div className='fade-in min-h-screen flex items-center justify-center'>
-        <Card className='min-w-[600px]  p-5'>
+        <Card className='w-[600px]  p-5'>
           <CardHeader>
             <CardTitle className='text-3xl'>Login Form</CardTitle>
             <CardDescription className='font-thin'>
@@ -134,7 +151,7 @@ const Login = () => {
                   Don&#39;t have an account?
                 </span>
                 <Link
-                  to={AppConstantRoutes.paths.auth.login}
+                  to={AppConstantRoutes.paths.auth.register}
                   className='text-sm text-slate-800 underline'
                 >
                   Register
