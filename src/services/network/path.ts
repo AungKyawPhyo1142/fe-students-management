@@ -8,9 +8,9 @@ export const ApiConstantRoutes = {
         get login() {
           return `${this.default}/login`
         },
-        get register(){
+        get register() {
           return `${this.default}/register`
-        }
+        },
       }
     },
   },
