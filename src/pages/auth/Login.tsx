@@ -61,7 +61,6 @@ const Login = () => {
         })
       }
     })
-
     if (response) {
       if (response.status === 'SUCCESS') {
         // if login is successful, set the auth state and redirect to the dashboard
@@ -95,7 +94,7 @@ const Login = () => {
   return (
     <LayoutWithoutAuth>
       <Toaster />
-      <div className='fade-in min-h-screen flex items-center justify-center'>
+      <div className='fade-in min-h-screen flex items-center justify-center '>
         <Card className='w-[600px]  p-5'>
           <CardHeader>
             <CardTitle className='text-3xl'>Login Form</CardTitle>
